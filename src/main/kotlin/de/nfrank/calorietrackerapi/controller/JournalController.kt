@@ -18,7 +18,7 @@ class JournalController(val journalRepository: JournalRepository) {
     }
 
     @GetMapping("/{id}")
-    fun getOneJournal(@PathVariable("id") id: String): ResponseEntity<Journal> {
+    fun getJournalById(@PathVariable("id") id: String): ResponseEntity<Journal> {
         val journal = journalRepository.findOneById(ObjectId(id))
         return ResponseEntity.ok(journal)
     }
